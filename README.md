@@ -1,8 +1,10 @@
 # Data401Project4
 
 To Do list:
+ - Figure out what to do about differing image sizes in Caltech101 (some are only 1 channel)
+ - Figure out what to do about some of the four channel images in AlexHunter images
  - 3 Caltech101 models
-    - Each with a different preprocesssing (1. raw images 2. Edge detection 3. Wavelet Transform (see AlexHunterNet.ipynb for 2 and 3)
+    - Each with a different preprocesssing (1. raw 3 channel images 2. Edge detection 3. Wavelet Transform (see AlexHunterNet.ipynb for 2 and 3)
   - 6 AlexHunter models
     - 3 with the same preprocessing above AND transfer learning, 3 with the preprocessing above AND NO transfer learning
     

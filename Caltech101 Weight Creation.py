@@ -3,9 +3,9 @@
 # %%
 
 # TODO:
-#  - Implement Residual connections
 #  - find ways to speed up training process (perhaps use keras flow_from_directory)
 #  - figure out what to do with different size images
+#  - Experiment with different architectures
 
 # %%
 

@@ -7,6 +7,7 @@ To Do list:
     - Each with a different preprocesssing (1. raw 3 channel images 2. Edge detection 3. Wavelet Transform (see AlexHunterNet.ipynb for 2 and 3)
   - 6 AlexHunter models
     - 3 with the same preprocessing above AND transfer learning, 3 with the preprocessing above AND NO transfer learning
+  - Would also be cool to get some output from AlexHunterNet like the bottom of the readme of this repo https://github.com/slundberg/shap
     
 Caltech101 Weight Creation.py already builds a model for Caltech101 and just needs to be adapted to include all preprocessing types
  - The deliverable for this script is a set of weights denoted 'caltech101_[preprocessingtype].h5' and reports on its performace

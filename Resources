@@ -1,0 +1,3 @@
+Spatial Pyramid Pooling: allows CNN's to have different input shapes
+ - https://arxiv.org/abs/1406.4729v4
+ - https://github.com/yhenon/keras-spp

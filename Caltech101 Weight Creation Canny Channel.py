@@ -181,4 +181,4 @@ print(model.summary())
 Save model for usage in AlexHunter
 """
 model.build(None)
-model.save("caltech_101_canny_no_pyramid.h5")
+model.save("models/caltech_101_canny_no_pyramid.h5")

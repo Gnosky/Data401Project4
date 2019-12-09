@@ -1,0 +1,18 @@
+trans_imgs = model.predict(imgs)
+
+trans_imgs = trans_imgs.reshape(369,-1)
+
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+pca_trans_imgs = pca.fit_transform(trans_imgs)
+
+import matplotlib.patches as mpatches
+alex = mpatches.Patch(color='blue', label='Alex')
+hunter = mpatches.Patch(color='red', label='Hunter')
+
+a = plt.scatter(pca_trans_imgs[:,0],pca_trans_imgs[:,1],
+            c=['red' if label=='Hunter' else 'blue' for label in labels])
+
+plt.legend(handles=[alex,hunter])
+plt.title('PCA Dimensional Reduction applied to Caltech Model Output')
+plt.savefig('Caltech_dimension_reduction')

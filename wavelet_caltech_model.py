@@ -67,7 +67,7 @@ for i, img in enumerate(imgs):
 
 for i,stack in enumerate(wavelet_imgs):
     stack = np.dstack(stack)
-    wavelet_imgs[i] = stack
+    wavelet_imgs[i] = stack[:,:,:3]
 
 
 x_train, x_test, y_train, y_test = train_test_split(wavelet_imgs, labels, test_size=.1)
@@ -82,7 +82,7 @@ y_test = np_utils.to_categorical(y_test, num_classes)
 print(x_train.shape, x_test.shape)
 # %%
 
-num_channels = 8
+num_channels = 3
 
 # # Note that we leave the image size as None to allow multiple image sizes
 # model.add(Conv2D(32, (3, 3), padding='same',
@@ -142,9 +142,9 @@ model.compile(loss='categorical_crossentropy', optimizer=opt,
 #data augmentation
 datagen = ImageDataGenerator(
     featurewise_center=False,  # set input mean to 0 over the dataset
-    samplewise_center=True,  # set each sample mean to 0
+    samplewise_center=False,  # set each sample mean to 0
     featurewise_std_normalization=False,  # divide inputs by std of the dataset
-    samplewise_std_normalization=True,  # divide each input by its std
+    samplewise_std_normalization=False,  # divide each input by its std
     zca_whitening=False,  # apply ZCA whitening
     rotation_range=0,  # randomly rotate images in the range (degrees, 0 to 180)
     width_shift_range=.2,  # randomly shift images horizontally (fraction of total width)
@@ -156,7 +156,7 @@ datagen.fit(x_train)
 # gen = generator(x_train, y_train)
 # val_gen = generator(x_test,y_test)
 
-EPOCHS = 10
+EPOCHS = 100
 BATCH = 8
 
 callbacks = []
@@ -189,5 +189,5 @@ print(model.summary())
 Save model for usage in AlexHunter
 """
 model.build(None)
-model.save("wavelet_model.h5")
+model.save("wavelet_model-3-channel.h5")
 
